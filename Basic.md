@@ -28,7 +28,48 @@ case type == 'framework" then
 case type == 'date' then
    lấy thời gian trên server hiển thị
 ```
-### 1.5 Liệt kê file trong thư mục
+
+### 1.6 Chuyển hướng trên server - Server side redirect
+```GET /old``` hãy chuyển địa chỉ ```/new```
+Hãy thử tiếp từ ```/new``` lại chuyển về ```/old```
+Tham khảo [server side redirect](https://en.wikipedia.org/wiki/Server-side_redirect)
+
+### 1.7 Lỗi 404
+Hãy tạo một trang báo lỗi thay thế cho lỗi 404
+```
+      .o     .oooo.         .o   
+    .d88    d8P'`Y8b      .d88   
+  .d'888   888    888   .d'888   
+.d'  888   888    888 .d'  888   
+88ooo888oo 888    888 88ooo888oo 
+     888   `88b  d88'      888   
+    o888o   `Y8bd8P'      o888o  
+```
+Tham khảo [Lỗi 404](https://en.wikipedia.org/wiki/HTTP_404)
+
+### 1.8 REST API trả về JSON
+```GET /books``` trả về danh sách các quyển sách
+```JSON
+[{
+  "id": 1,
+  "title": "Educated: A Memoir",
+  "author": "Tara Westover"
+}, {
+  "id": 2,
+  "title": "The Great Alone",
+  "author": "Kristin Hannah"
+}, {
+  "id": 3,
+  "title": "The Feather Thief",
+  "author": "Kirk Wallace Johnson"
+}, {
+  "id": 4,
+  "title": "The Woman in the Window",
+  "author": "A.J. Finn"
+}]
+```
+Dữ liệu gốc tham khảo ở đây [Best books of 2018 so far, according to Amazon](https://mashable.com/2018/06/19/best-books-2018-amazon/#7MBooA4oIqq0)
+### 1.9 Liệt kê file trong thư mục
 ```/``` liệt kê tất các file trong thư mục, có link tải về được ở mỗi tên file
 hint: Hãy sử dụng hàm có sẵn của web framework sau đó mới tự lập trình
 dùng hàm API để liệt kê thư mục rồi trả về. Xem ví dụ dưới
@@ -43,18 +84,29 @@ dùng hàm API để liệt kê thư mục rồi trả về. Xem ví dụ dướ
 0 directories, 5 files
 ```
 
-### 1.6 Liệt kê cả file và folder trong thư mục (Khó)
+### 1.10 Liệt kê cả file và folder trong thư mục (Khó)
 ```/``` liệt kê tất các file, folder trong thư mục. Click vào folder sẽ mở ra thư mục sâu hơn.
 Click vào parent sẽ ra thư mục cha
+## 2. View Template căn bản
+### 2.1 Truyền tham số qua URL Parameter tính chỉ số BMI
+``` GET /bmi?name=John&weigh=75&heigh=175```
+Hãy in ra màn hình sử dụng view template có 4 place holders:
+- name
+- weight (kg)
+- height (cm)
+- BMI index
+Tham khảo chỉ số Body Mass Index [BMI](https://en.wikipedia.org/wiki/Body_mass_index)
 
-## 2. POST Method
-### 2.1 Cộng 2 số
+## 3. POST Method
+### 3.1 Cộng 2 số
 ```GET /add``` hiển thị form gồm 2 trường A và B, ấn nút submit trả về kết quả như sau ```A + B = C```
 Nâng cao:
 - Kiểm tra dữ liệu nhập vào tại server, nếu tham số không có dạng số hãy báo lỗi
 - Bổ xung thêm ```/minus``` và ```/multiply``` để trừ và nhân
+### 3.2 Form tính chỉ số BMI
+![](images/bmi.jpg)
 
-### 2.2 Login form user name, password
+### 3.3 Login form user name, password
 
 ```GET /login``` hiển thị form login gồm user name và password
 
@@ -67,15 +119,18 @@ else
   redirect sang một trang /loginfail
 endif
 ```
-
-### 2.3 Upload một file
+### 3.4 Upload một file
 ```POST \upload``` Upload một file bất kỳ lên server, trả về link để tải file đó về.
 Cải tiến server để chỉ cho phép upload file ảnh *.png, *.jpg, *.gif, kích thước file dưới 500 Kbytes
 
 
-### POST method upload nhiều file
+### 3.5 Upload nhiều file mp3
+```POST \uploads``` Upload nhiều file mp3 trả về danh sách các file upload thành công
+Ấn vào link có thể nghe nhạc
 
-### POST method nhiều trường + file upload
+### 3.6 Upload avatar
+
+
 
 ### REST API
 
