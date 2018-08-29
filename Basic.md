@@ -28,6 +28,24 @@ case type == 'framework" then
 case type == 'date' then
    lấy thời gian trên server hiển thị
 ```
+### 1.5 Liệt kê file trong thư mục
+```/``` liệt kê tất các file trong thư mục, có link tải về được ở mỗi tên file
+hint: Hãy sử dụng hàm có sẵn của web framework sau đó mới tự lập trình
+dùng hàm API để liệt kê thư mục rồi trả về. Xem ví dụ dưới
+```
+.
+├── Basic.md
+├── LICENSE
+├── MiniProject.md
+├── Project.md
+└── ReadMe.md
+
+0 directories, 5 files
+```
+
+### 1.6 Liệt kê cả file và folder trong thư mục (Khó)
+```/``` liệt kê tất các file, folder trong thư mục. Click vào folder sẽ mở ra thư mục sâu hơn.
+Click vào parent sẽ ra thư mục cha
 
 ## 2. POST Method
 ### 2.1 Cộng 2 số
@@ -52,7 +70,8 @@ endif
 
 ### 2.3 Upload một file
 ```POST \upload``` Upload một file bất kỳ lên server, trả về link để tải file đó về.
-Cải tiến server để chỉ cho phép upload file ảnh *.png, *.jpg, *
+Cải tiến server để chỉ cho phép upload file ảnh *.png, *.jpg, *.gif, kích thước file dưới 500 Kbytes
+
 
 ### POST method upload nhiều file
 
