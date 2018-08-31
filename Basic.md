@@ -3,6 +3,7 @@
 ### 1.1 Hello World
 Chạy web app ở cổng 8080, khi người dùng vào http://localhost:8080 thì thấy web page có dòng chữ HelloWorld
 
+![HelloWorld](images/helloworld.jpg)
 ### 1.2 Get method không tham số
 Ứng dụng web ở cổng 8080 trả về web page ở 2 đường dẫn
 ```
@@ -49,6 +50,7 @@ Tham khảo [Lỗi 404](https://en.wikipedia.org/wiki/HTTP_404)
 
 ### 1.8 REST API trả về JSON
 ```GET /books``` trả về danh sách các quyển sách
+
 ```JSON
 [{
   "id": 1,
@@ -127,13 +129,61 @@ Cải tiến server để chỉ cho phép upload file ảnh *.png, *.jpg, *.gif,
 ### 3.5 Upload nhiều file mp3
 ```POST \uploads``` Upload nhiều file mp3 trả về danh sách các file upload thành công
 Ấn vào link có thể nghe nhạc
+![upoad songs](images/uploadsongs.jpg)
 
 ### 3.6 Upload avatar
+![Upload avatar](images/upload_avatar.jpg)
 
+### 3.7 Todo List theo kiểu multi pages
+Todo List sử dụng cổ điển, reload lại trang mỗi khi thực hiện một hành động:
+- Thêm task mới
+- Xoá task hiện tại
+- Bật tắt check box bên trái task để đánh dấu task hoàn thành hay chưa hoàn thành
+- Ấn vào task thì chuyển sang chế độ edit
+```
+   task {
+     id: integer //id định danh cho từng task
+     title: string //mô tả từng task
+     done: bool //true nếu đã xong
+   }
+```
+Chú ý không sử dụng CSDL, mà hãy dùng mảng để lưu danh sách tác vụ
 
+![Todo List](images/todolist.jpg)
 
-### REST API
+![Todo List Update](images/todolist_update.jpg)
 
+Hint: hãy tạo các handler. Việc tạo mã HTML hãy code thủ công không sử dụng View Template
+
+```
+GET /  trả về danh sách các task
+GET /task?id= trả về 1 task có ID
+POST /task nếu không có id tạo mới một task
+PUT /task cập nhật một task có sẵn, cần truyền vào id. Sửa title hoặc cập nhật done or not
+DELETE /task truyền vào id của task
+```
+
+## 4. REST API cơ bản
+### 4.1 REST Todo List không cần database
+Ở server hãy tạo REST API cho ứng dụng Todo List.
+```
+GET /  trả về danh sách các task
+GET /task?id= trả về 1 task có ID
+POST /task nếu không có id tạo mới một task
+PUT /task cập nhật một task có sẵn, cần truyền vào id. Sửa title hoặc cập nhật done or not
+DELETE /task truyền vào id của task
+```
+
+### 4.2 Kết hợp AJAX với REST
+Sử dụng thư viện jQuery để viết lại ứng dụng ToDoList với điều kiện không được load lại trang
+
+Tham khảo thêm [ví dụ TodoList viết bằng jQuery và HandleBar.js](http://todomvc.com/examples/jquery/#/active)
+
+### 4.3 Gọi đến REST API server ngoài
+Viết ToDo List chỉ liệt kê tác vụ phần back end gián tiếp gọi đến một REST API khác trên Internet.
+Hãy lấy dữ liệu từ [jsonplaceholder](https://jsonplaceholder.typicode.com/todos)
+
+![Todo List call REST](images/todolist_rest.jpg)
 
 ### Dùng session lưu biến counter
 In ra màn hình biến counter tăng mỗi khi refresh web site.
@@ -142,6 +192,9 @@ Yêu cầu sử dụng session để lưu biến counter
 ### Dùng session lưu giỏ hàng (ứng dụng Multiple Web Page)
 Trang chủ hiện ra danh sách 4 mặt hàng
 - Cam
+
+
+
 
 
 ## 2. Ứng dụng đơn giản
