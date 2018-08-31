@@ -185,20 +185,64 @@ Hãy lấy dữ liệu từ [jsonplaceholder](https://jsonplaceholder.typicode.c
 
 ![Todo List call REST](images/todolist_rest.jpg)
 
-### Dùng session lưu biến counter
+Dữ liệu là 100 bản ghi todo list
+```json
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "delectus aut autem",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "quis ut nam facilis et officia qui",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "fugiat veniam minus",
+    "completed": false
+  },
+```
+### 4.4 Web site lấy dữ liệu dự báo thời tiết từ Accuweather
+Accuweather có gói miễn phí cung cấp dự báo thời tiết qua REST. Chỉ cần đăng ký tài khoản có APIKey là gọi được. Tạo web app lấy dữ liệu từ Accuweather hiển thị các thông tin:
+- Địa điểm
+- Nhiệt độ
+- Độ ẩm
+- Dự báo mưa, nắng, sấm chớp bằng ảnh icon lấy từ iconfinder.com
+
+![Dự báo thời tiết](images/weatherforecast.jpg)
+
+
+### 4.5 Viết REST API Handler chấp nhận file binary upload
+Viết một REST API handler để có thể upload file + truyền một số tham số lên server.
+Nếu upload thành công thì trả về thông báo.
+Chú ý sử dụng AJAX call vào REST API này
+
+## 5. Session
+### 5.1 Dùng session lưu biến counter
 In ra màn hình biến counter tăng mỗi khi refresh web site.
 Yêu cầu sử dụng session để lưu biến counter
+![session counter](images/session_counter.jpg)
 
-### Dùng session lưu giỏ hàng (ứng dụng Multiple Web Page)
-Trang chủ hiện ra danh sách 4 mặt hàng
-- Cam
+### 5.2 Dùng session lưu giỏ hàng (ứng dụng Multiple Web Page)
+Web bán hàng đơn giản gồm 2 trang: trang chủ và trang đặt hàng.
+Trang chủ hiện ra danh sách 4 mặt hàng dạng hyper link: Tivi, Tủ lạnh, Máy Giặt, Xe máy
+Người mua click vào link, coi là hành động đặt mua. Click nhiều lần thì tăng thêm số lượng mua.
+Hãy lưu danh sách mặt hàng khách hàng mua vào session để khi chuyển sang trang giỏ hàng
 
+```http://localhost:8080/```
 
+![Trang chủ](images/muahang.jpg)
 
+```http://localhost:8080/giohang/```
 
+![Giỏ hàng](images/giohang.jpg)
 
-## 2. Ứng dụng đơn giản
+### 5.3 Dùng Redis để lưu session
+Nhiều web framework cho phép sử dụng Redis để lưu session. Hãy nâng cấp ứng dụng 'Dùng session lưu giỏ hàng' thay vì dùng đối tượng session in memory sang dùng Redis
 
-## Ứng dụng trung bình
-
-## Ứng dụng phức tạp
+## 6 Cookie
