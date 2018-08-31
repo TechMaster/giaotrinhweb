@@ -4,6 +4,8 @@
 Chạy web app ở cổng 8080, khi người dùng vào http://localhost:8080 thì thấy web page có dòng chữ HelloWorld
 
 ![HelloWorld](images/helloworld.jpg)
+
+Hãy thử nghiệm và demo chức năng hot reload nếu web framework hỗ trợ
 ### 1.2 Get method không tham số
 Ứng dụng web ở cổng 8080 trả về web page ở 2 đường dẫn
 ```
@@ -228,7 +230,21 @@ In ra màn hình biến counter tăng mỗi khi refresh web site.
 Yêu cầu sử dụng session để lưu biến counter
 ![session counter](images/session_counter.jpg)
 
-### 5.2 Dùng session lưu giỏ hàng (ứng dụng Multiple Web Page)
+
+### 5.2 Dùng Session để lưu login user
+Màn hình đâu tiên khi người dùng chưa đăng nhật sẽ không nhìn thấy dữ liệu mà chỉ
+có link để chuyển sang màn hình login
+![homepage](images/login1.jpg)
+
+Màn hình login
+
+![login screen](images/login2.jpg)
+
+Nếu login không thành công thì reload lại trang này, nếu thành công thì quay lại trang chủ
+
+![Login Success](images/login3.jpg)
+
+### 5.3 Dùng session lưu giỏ hàng (ứng dụng Multiple Web Page)
 Web bán hàng đơn giản gồm 2 trang: trang chủ và trang đặt hàng.
 Trang chủ hiện ra danh sách 4 mặt hàng dạng hyper link: Tivi, Tủ lạnh, Máy Giặt, Xe máy
 Người mua click vào link, coi là hành động đặt mua. Click nhiều lần thì tăng thêm số lượng mua.
@@ -242,7 +258,26 @@ Hãy lưu danh sách mặt hàng khách hàng mua vào session để khi chuyể
 
 ![Giỏ hàng](images/giohang.jpg)
 
-### 5.3 Dùng Redis để lưu session
+### 5.4 Dùng Redis để lưu session
 Nhiều web framework cho phép sử dụng Redis để lưu session. Hãy nâng cấp ứng dụng 'Dùng session lưu giỏ hàng' thay vì dùng đối tượng session in memory sang dùng Redis
 
+
 ## 6 Cookie
+### 6.1 Lưu lựa chọn người dùng bằng cookie
+Tạo một trang web chỉ có dòng text HelloWorld
+Người ấn một trong hai nút để chọn theme backgroud. Tắt trình duyệt đi rồi mở lại sẽ
+thấy lựa chọn theme được ghi nhớ lại
+
+![](images/cookie.jpg)
+
+### 6.2 Dùng cookie lưu biến counter
+Thay vì sử dụng session hãy dùng cookie để lưu biến cookie.
+Trong ví dụ này dùng javascript để sửa đổi biến counter trong cookie. 
+Mỗi lần trang web reload tăng biến counter lên 1 rồi lưu vào cookie.
+Hãy thử hack biến counter bằng cách gán nó một giá trị bật kỳ
+
+### 6.3 Cookie httpOnly = true vs false
+Để không cho phép người dùng sửa đổi cookie hãy chỉ cho phép sửa đổi cookie từ server.
+
+Tham khảo [Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+
