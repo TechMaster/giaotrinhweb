@@ -376,6 +376,8 @@ Lời gọi từ 8080 đến 8081 sẽ là Cross Origin. Sẽ có 2 trường h�
 - 8081 chấp nhận CORS, lời gọi thành công
 - 8081 không chấp nhận CORS, lợi gọi sẽ bị từ chối
 
+![CORS](images/cors.jpg)
+
 ```json
 [{
   "id": 1,
