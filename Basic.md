@@ -281,3 +281,121 @@ Hãy thử hack biến counter bằng cách gán nó một giá trị bật kỳ
 
 Tham khảo [Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 
+## 7 Request Response
+### 7.1 Set Content Type
+Gọi vào một REST API Handler hãy trả dữ liệu về theo các định dạng sau:
+
+1. JSON
+```json
+[{
+  "id": 1,
+  "first_name": "Ardella",
+  "last_name": "Trood"
+}, {
+  "id": 2,
+  "first_name": "Ludovika",
+  "last_name": "Dewhirst"
+}, {
+  "id": 3,
+  "first_name": "Joline",
+  "last_name": "Webb-Bowen"
+}, {
+  "id": 4,
+  "first_name": "Hyatt",
+  "last_name": "Paskins"
+}, {
+  "id": 5,
+  "first_name": "Sascha",
+  "last_name": "Delatour"
+}]
+```
+2. XML
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <record>
+    <id>1</id>
+    <first_name>Jaimie</first_name>
+    <last_name>Geertje</last_name>
+  </record>
+  <record>
+    <id>2</id>
+    <first_name>Skyler</first_name>
+    <last_name>Weagener</last_name>
+  </record>
+  <record>
+    <id>3</id>
+    <first_name>Betteann</first_name>
+    <last_name>Coppin</last_name>
+  </record>
+  <record>
+    <id>4</id>
+    <first_name>Wadsworth</first_name>
+    <last_name>Manoelli</last_name>
+  </record>
+  <record>
+    <id>5</id>
+    <first_name>Ana</first_name>
+    <last_name>Tradewell</last_name>
+  </record>
+</dataset>
+```
+3. TEXT/CSV
+```csv
+CSV
+id,first_name,last_name
+1,Isacco,Gulk
+2,Rice,Atwood
+3,Catina,Pauleau
+4,Stanford,Jencey
+5,Brandais,Crombie
+```
+### 7.2 GZip compession
+Trả về dữ liệu dài > 100k gồm cả text và ảnh. Hãy bật và tắt chức năng nén Gzip
+Sử dụng Chrome > More Tools > Developer Tools > Networks tab để dữ liệu tải về, thời gian
+
+Hint: Dùng Mockaroo để sinh dữ liệu và lấy thêm 5 ảnh độ phân giải cao từ [unsplash.com](https://unsplash.com/)
+
+Chú ý tắt chức năng cache của trình duyệt
+
+![disable chrome cache](images/disable_cache_chrome.jpg)
+
+### 7.3 Stream data từ web
+Lập trình để trả về chuỗi số nguyên dương tuần tự từ 1, 2, 3, 4, 5... cách nhau 0.1 giây.
+Trình duyệt cần hiển thị tuần tự dữ liệu trả về chứ không được gom đến gói dữ liệu cuối cùng rồi hiển thị
+
+Tham khảo 
+- [Chunked Tranfer Encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding)
+- [Ví dụ trả về dữ liệu cách nhau một khoảng thời gian](https://github.com/iris-contrib/examples/blob/master/http_responsewriter/stream-writer/main.go)
+
+### 7.4 Cross-Origin Resource Sharing
+Dựng hay web app ở 2 cổng khác nhau
+- 8080: Trả về web page có jQuery, có lời gọi AJAX vào REST API ở cổng 8081
+- 8081: REST API trả về dữ liệu JSON
+Lời gọi từ 8080 đến 8081 sẽ là Cross Origin. Sẽ có 2 trường hợp xảy ra:
+- 8081 chấp nhận CORS, lời gọi thành công
+- 8081 không chấp nhận CORS, lợi gọi sẽ bị từ chối
+
+```json
+[{
+  "id": 1,
+  "title": "Goodbye Lover",
+  "genre": "Comedy|Crime|Thriller"
+}, {
+  "id": 2,
+  "title": "24 Exposures",
+  "genre": "Crime|Drama|Thriller"
+}, {
+  "id": 3,
+  "title": "Zatoichi and the Fugitives (Zatôichi hatashi-jô) (Zatôichi 18)",
+  "genre": "Action|Adventure|Drama"
+}, {
+  "id": 4,
+  "title": "Indiana Jones and the Temple of Doom",
+  "genre": "Action|Adventure|Fantasy"
+}, {
+  "id": 5,
+  "title": "Cutting Edge: Going for the Gold, The",
+  "genre": "Comedy|Drama|Romance"
+}]
+```

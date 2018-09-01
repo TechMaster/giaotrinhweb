@@ -17,6 +17,7 @@ Phần này sẽ chuyên các ví dụ minh hoạ cho Model - View - Controller
 
 ### 1.7 Gọi hàm từ trong view template nếu có
 
+### 1.8 Cache View Template render nếu có
 
 ## 2. Model
 ### 2.1 Truyền 1 đối tượng model vào View

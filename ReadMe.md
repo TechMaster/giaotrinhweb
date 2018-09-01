@@ -4,6 +4,7 @@ Danh sách các ví dụ chia theo các cấp độ:
 
 1. [Dễ](Basic.md)
 2. [MVC](MVC.md)
+3. [Triển khai](DevOps.md)
 3. [Dự án nhỏ](MiniProject.md)
 4. [Dự án thật](Project.md)
 
