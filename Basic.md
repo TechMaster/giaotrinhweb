@@ -1,4 +1,8 @@
 # Basic
+Hướng dẫn: đây là phần căn bản mà bất kỳ web framework nào cũng tuân thủ và hỗ trợ.
+Các ví dụ cần đơn giản không sử dụng CSS hay JavaScript framework phức tạp. Phần gọi AJAX có thể dụng jQuery.
+
+Nếu bạn thấy cần bổ xung thêm ví dụ hãy email cuong@techmaster.vn
 ## 1. GET Method
 ### 1.1 Hello World
 Chạy web app ở cổng 8080, khi người dùng vào http://localhost:8080 thì thấy web page có dòng chữ HelloWorld
