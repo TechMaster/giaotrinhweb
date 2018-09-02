@@ -1,11 +1,22 @@
 # MVC
 
+## Giới thiệu
 Phần này sẽ chuyên các ví dụ minh hoạ cho Model - View - Controller. Trước khi học đến phần Model - View - Controller, sinh viên cần lập trình [căn bản](Basic.md) và khoá học Postgresql - MySQL - MongoDB.
 
 Phần MVC sẽ tập trung vào kỹ thuật Server Side Rendering và Multi Pages App:
 - Server Side Rendering: nội dung web site HTML được tạo nhờ Controller đổ dữ liệu từ Model vào View Template. View Template Engine có nhiệm vụ sản sinh ra HTML rồi trả về.
 
 - Multi Pages App: Web app sẽ có nhiều trang (đường dẫn) khác với mô hình Single Page App, phần back end là REST API. MPA sẽ giúp SEO tốt hơn, caching tốt hơn.
+
+## Dự án demo Blog
+Hãy lập trình Blog cho cá nhân đơn giản. Hãy sử dụng [theme tối giản Tale](https://themes.gohugo.io/tale-hugo/) để tránh cho việc lập trình bị phân tâm bởi giao diện.
+
+1. Chỉ cho một người duy nhất sử dụng
+2. Không có chức năng comment
+3. Có chức năng gắn tags vào post. Một post có thể gắn nhiều tags.
+4. Có thể tìm kiếm bài viết
+5. Có phần admin tối giản: đổi password, quản lý danh sách bài viết, quản lý tags.
+6. Phần editor của bài viết có thể dùng [Markdown Editor](https://github.com/nhnent/tui.editor)
 
 Nếu các bạn có góp ý hãy email cho tôi tại địa chỉ cuong@techmaster.vn
 
