@@ -1,8 +1,11 @@
 # MVC
 
-Phần này sẽ chuyên các ví dụ minh hoạ cho Model - View - Controller. Trước khi học đến phần Model - View - Controller, sinh viên cần học khoá học Postgresql - MySQL căn bản và hoàn thành nano degree này.
+Phần này sẽ chuyên các ví dụ minh hoạ cho Model - View - Controller. Trước khi học đến phần Model - View - Controller, sinh viên cần lập trình [căn bản](Basic.md) và khoá học Postgresql - MySQL - MongoDB.
 
-Khác với phần học [Căn bản](Basic.md), học phần này nên bắt đầu dạy qua những dự án thú vị, phức tạp hơn một chút. Trước khi chuyển sang [Mini Project](MiniProject.md).
+Phần MVC sẽ tập trung vào kỹ thuật Server Side Rendering và Multi Pages App:
+- Server Side Rendering: nội dung web site HTML được tạo nhờ Controller đổ dữ liệu từ Model vào View Template. View Template Engine có nhiệm vụ sản sinh ra HTML rồi trả về.
+
+- Multi Pages App: Web app sẽ có nhiều trang (đường dẫn) khác với mô hình Single Page App, phần back end là REST API. MPA sẽ giúp SEO tốt hơn, caching tốt hơn.
 
 Nếu các bạn có góp ý hãy email cho tôi tại địa chỉ cuong@techmaster.vn
 
@@ -50,8 +53,10 @@ PHP, Node.js, Python, Golang có cơ chế hot reload: không cần biên dịch
 
 ### 2.2 Truyền mảng đối tượng model vào View
 
-### 2.3 Truyền cấu trúc quan hệ 1:N model vào View 
+### 2.3 Truyền cấu trúc quan hệ 1:N model vào View
 
 ## 3. Router - Controller
 
-## 4. Singleton
+## 4. ORM
+
+## 5. Singleton

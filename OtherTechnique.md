@@ -1,12 +1,14 @@
 # Các kỹ thuật quan trọng khác khi lập trình web
 ## 1. Gửi email
 
-## 2. Web Socket
+## 2. Caching 
 
-## 3. Server Sent Event
+## 3. Web Socket
 
-## 4. Message Queue
+## 4. Server Sent Event
 
-## 5. Streaming video
+## 5. Message Queue
 
-## 6. Elastics Search
+## 6. Streaming video
+
+## 7. Elastics Search

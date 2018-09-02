@@ -5,7 +5,7 @@ Các ví dụ cần đơn giản không sử dụng CSS hay JavaScript framework
 Nếu bạn thấy cần bổ xung thêm ví dụ hãy email cuong@techmaster.vn
 Bài tập, mini project giao cho sinh viên có thể tham khảo ở đây
 
-- [flaviocopes.com/sample-app-ideas](https://flaviocopes.com/sample-app-ideas/)
+- [flaviocopes.com/sample-app-ideas]()
 ## 1. GET Method
 ### 1.1 Hello World
 Chạy web app ở cổng 8080, khi người dùng vào http://localhost:8080 thì thấy web page có dòng chữ HelloWorld
